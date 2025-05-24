@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Song Streaming Site</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <title>My Song Streaming Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <h1>🎵 Welcome to My Streaming Site</h1>
-
-  <div class="player">
-    <audio controls id="audioPlayer">
-      <source src="songs/song1.mp3" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
-
-    <ul id="songList">
-      <li onclick="playSong('songs/song1.mp3')">Song 1</li>
-      <li onclick="playSong('songs/song2.mp3')">Song 2</li>
+    <h1>My Song Streaming Site</h1>
+    <audio id="audioPlayer" controls style="width: 100%;"></audio>
+    <ul>
+        <li onclick="playSong('songs/128-Aayi Nai - Stree 2 128 Kbps.mp3')">Aayi Nai - Stree 2</li>
+        <li onclick="playSong('songs/128-Laal Pari - Housefull 5 128 Kbps.mp3')">Laal Pari - Housefull 5</li>
     </ul>
-  </div>
 
-  <script src="script.js"></script>
+    <script>
+        function playSong(path) {
+            const player = document.getElementById('audioPlayer');
+            player.src = path;
+            player.play();
+        }
+    </script>
 </body>
 </html>
